@@ -260,18 +260,17 @@
             <blockquote class="rounded-lg bg-gray-50 p-6 shadow-sm sm:p-8">
               <div class="flex items-center gap-4">
                 <img  alt="Man"
-                  src="https://images.unsplash.com/photo-1595152772835-219674b2a8a6?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1180&q=80"
-                  class="h-14 w-14 rounded-full object-cover"   />
+                  src="img/user1.jpg"
+                  class="h-14 w-14 rounded-full object-cover  aspect-square	"   />
                 <div>
-                  <p class="mt-0.5 text-2xl font-bold text-gray-900">Paul Starr</p>
-                  <p class="text-lg cc-secondary">Bangalore, India</p>
+                  <p class="mt-0.5 text-2xl font-bold text-gray-900">Sri Krishna Albal</p>
+                  <p class="text-lg cc-secondary">Asst Vice President in MUFG global service</p>
                 </div>
               </div>
               <p class="mt-4 cc-secondary">
-                Lorem ipsum dolor sit, amet consectetur adipisicing elit. Culpa sit rerum incidunt, a
-                consequuntur recusandae ab saepe illo est quia obcaecati neque quibusdam eius accusamus
-                error officiis atque voluptates magnam!
+                The Avirath team, it has been a pleasure to work with you. The construction was well planned, organized and scheduled. No surprises.You always listen patiently to your client's issues  & resolve with pritoty. You and your team has done excellent job and I personally appreciate the construction materials used for my building. I would like to offer you my future construction works. I wish you all the very best for your projects.
               </p>
+              
             </blockquote>
       
             <blockquote class="rounded-lg bg-gray-50 p-6 shadow-sm sm:p-8">
@@ -280,15 +279,40 @@
                   src="https://images.unsplash.com/photo-1595152772835-219674b2a8a6?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1180&q=80"
                   class="h-14 w-14 rounded-full object-cover"   />
                 <div>
-                  <p class="mt-0.5 text-2xl font-bold text-gray-900">Paul Starr</p>
-                  <p class="text-lg cc-secondary">Bangalore, India</p>
+                  <p class="mt-0.5 text-2xl font-bold text-gray-900">Vijay TA</p>
+                  <p class="text-lg cc-secondary">Founder & CEO SILOPLEXUS</p>
                 </div>
               </div>
-              <p class="mt-4 cc-secondary">
-                Lorem ipsum dolor sit, amet consectetur adipisicing elit. Culpa sit rerum incidunt, a
-                consequuntur recusandae ab saepe illo est quia obcaecati neque quibusdam eius accusamus
-                error officiis atque voluptates magnam!
-              </p>
+            
+               
+               
+                <p class="leading-relaxed mt-4 cc-secondary">
+                  I would like to express my appreciation for the efforts put into the construction of my building. The project was completed within the agreed-upon timeframe, and the quality of work is commendable. Throughout the construction process, the communication from the Aviratha team was clear and transparent.  Regular updates were provided, and any concerns or queries I had were promptly addressed.
+                    <span class="hidden" id="more-text">
+                       This level of communication greatly contributed to a positive experience. The professionalism exhibited by the entire team, from project managers to on-site workers, was noteworthy. Courteous and respectful, they ensured a smooth and efficient construction process. I am satisfied with the outcome of the construction project, and I extend my gratitude to the entire team at Aviratha. I would consider working with your company again for future projects.
+                    </span>
+                </p>
+                <button id="toggle-btn" class="mt-4 text-blue-500 focus:outline-none">Read More</button>
+                <button id="hide-btn" class="hidden mt-4 text-blue-500 focus:outline-none">Hide</button>
+            
+            
+            <script>
+                const moreTextEl = document.getElementById('more-text');
+                const toggleBtnEl = document.getElementById('toggle-btn');
+                const hideBtnEl = document.getElementById('hide-btn');
+            
+                toggleBtnEl.addEventListener('click', () => {
+                    moreTextEl.classList.toggle('hidden');
+                    toggleBtnEl.classList.toggle('hidden');
+                    hideBtnEl.classList.toggle('hidden');
+                });
+            
+                hideBtnEl.addEventListener('click', () => {
+                    moreTextEl.classList.toggle('hidden');
+                    toggleBtnEl.classList.toggle('hidden');
+                    hideBtnEl.classList.toggle('hidden');
+                });
+            </script>
             </blockquote>
             <blockquote class="rounded-lg bg-gray-50 p-6 shadow-sm sm:p-8">
               <div class="flex items-center gap-4">
