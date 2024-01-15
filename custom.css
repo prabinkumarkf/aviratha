@@ -55,13 +55,15 @@
     -webkit-animation: scroll 40s linear infinite;
             animation: scroll 40s linear infinite;
     display: flex;
-    width: calc(250px * 14);
+    width: calc(350px * 14);
   }
   .slider .slide {
     height: 100px;
-    width: 250px;display: flex;
+    width: 350px;display: flex;
     align-items: center;
 }
+.slider .slide img{ opacity: 0.8; transition: 0.5s; filter: grayscale(100%);}
+.slider .slide img:hover{ opacity: 1; filter: grayscale(0%);}
 .wrapper_carousel {
     background: var(--primary-grey);
     height: 500px;
