@@ -9,6 +9,9 @@
   <link href="https://cdnjs.cloudflare.com/ajax/libs/flowbite/2.2.0/flowbite.min.css"  rel="stylesheet" />
   <script src="https://cdnjs.cloudflare.com/ajax/libs/flowbite/2.2.0/flowbite.min.js"></script>
   <script src="https://cdn.tailwindcss.com"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+  <script src="https://ajax.aspnetcdn.com/ajax/jQuery/jquery-3.2.1.min.js"></script>
+
 </head>
   <body  >
 <nav class="  w-full z-20 top-0 start-0    ">
@@ -111,18 +114,18 @@
     </div> 
     <div class="grid gap-4"> 
         
-        <form action="" class="space-y-6">
+       
              
-  
+          <form id="frmContact" action="" method="POST" novalidate="novalidate" class="space-y-6">
             <div class="grid grid-cols-1 gap-4 sm:grid-cols-2">
               <div>
-                <label class="sr-only" for="name">Name</label>
-                <input class="w-full border-b-2  border-0 p-3 text-sm" placeholder="Name" type="text" id="name">
+                <label class="sr-only" for="user_name">Name</label>
+                <input class="w-full border-b-2  border-0 p-3 text-sm" placeholder="Name" type="text" id="user_name">
               </div>
   
               <div>
-                <label class="sr-only" for="email">Email</label>
-                <input class="w-full border-b-2  border-0 p-3 text-sm" placeholder="Email" type="email" id="email">
+                <label class="sr-only" for="user_email">Email</label>
+                <input class="w-full border-b-2  border-0 p-3 text-sm" placeholder="Email" type="email" id="user_email">
               </div>
             </div>
             <div class="grid grid-cols-1 gap-4 sm:grid-cols-2"> 
@@ -132,21 +135,20 @@
               </div>
   
               <div>
-                <label class="sr-only" for="phone">Phone</label>
-                <input class="w-full border-b-2  border-0 p-3 text-sm" placeholder="Phone" type="text" id="phone">
+                <label class="sr-only" for="user_phone">Phone</label>
+                <input class="w-full border-b-2  border-0 p-3 text-sm" placeholder="Phone" type="text" id="user_phone">
               </div>
             </div>
+    <div>
+              <label class="sr-only" for="content">Message</label>
   
-            
-  
-            <div>
-              <label class="sr-only" for="message">Message</label>
-  
-              <textarea class="w-full border-b-2  border-0  p-3 text-sm" placeholder="Hello Iam Intrested in.." rows="8" id="message"></textarea>
+              <textarea class="w-full border-b-2  border-0  p-3 text-sm" placeholder="Hello Iam Intrested in.." rows="8" id="content"></textarea>
             </div>
   
             <div class="mt-4 items-center flex justify-end">
-                <button type="submit" class="w-max text-white  bg-[#45AEC4] hover:bg-black text-lg rounded-lg   px-5 py-2.5 text-center inline-flex items-center  ">Send Now
+               
+
+                <button type="submit"  id="submitButton" class="w-max text-white  bg-[#45AEC4] hover:bg-black text-lg rounded-lg   px-5 py-2.5 text-center inline-flex items-center  ">Send Now
                     <svg class="rtl:rotate-180 w-3.5 h-3.5 ms-2" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 14 10">
                     <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M1 5h12m0 0L9 1m4 4L9 9"></path>
                     </svg>  
@@ -179,11 +181,11 @@
          <div class="flex flex-col  items-center w-[600px] p-14 gap-7">  
           <h1 class="text-white text-3xl md:text-5xl text-center">Get a Free Estimate with Aviratha?</h1>
           <p class="text-white text-2xl text-center ">It is a long established fact  will be distracted.</p>
-          <button type="button" class="w-max text-white  bg-[#45AEC4] hover:bg-black text-lg rounded-lg   px-6 py-4 text-center inline-flex items-center  ">
+          <a  href="contact.html" class="w-max text-white  bg-[#45AEC4] hover:bg-black text-lg rounded-lg   px-6 py-4 text-center inline-flex items-center  ">
             Contact With Us
             <svg class="rtl:rotate-180 w-3.5 h-3.5 ms-2" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 14 10">
             <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M1 5h12m0 0L9 1m4 4L9 9"/>
-            </svg>  </div>
+            </svg> </a>  </div>
         </div>
       </section>
     <section class="w-full bg-[#45AEC4] px-5 my20">
@@ -215,7 +217,7 @@
       
             <li>
               <a
-                href="/"
+                href="https://www.instagram.com/aviratha_homes/"
                 rel="noreferrer"
                 target="_blank"
                 class="text-white transition hover:text-gray-700/75"
@@ -302,3 +304,79 @@
     </section>
   </body>
 </html>
+<script>
+  $("#contactsuccess").hide();$("#contactus").submit(function(d){d.preventDefault();var a=$(this),c=a.attr("action");var b=$.post(c,{name:$("#name").val(),mail:$("#mail").val(),mob:$("#mob").val(),message:$("#message").val()});b.success(function(e){$("#contactsuccess").show()});b.fail(function(e){$("#contactfaild").show()})});
+</script>
+<script>
+  $(document).ready(function (e){
+  
+    $("#frmContact").on('submit',(function(e){ 
+  
+      e.preventDefault();
+  
+      $("#mail-status").hide();
+  
+      $('#send-message').hide();
+  
+      $('#loader-icon').show();
+  
+      $.ajax({
+  
+        url: "contact.php",
+  
+        type: "POST",
+  
+        dataType:'json',
+  
+        data: {
+  
+        name:$('input[name="name"]').val(),
+  
+        email:$('input[name="email"]').val(),
+  
+        phone:$('input[name="phone"]').val(),
+        subject:$('input[name="subject"]').val(),
+  
+        content:$('textarea[name="content"]').val(),
+  
+        captcha: grecaptcha.getResponse()},				
+  
+        success: function(response){
+  
+        $("#mail-status").show();
+  
+        $('#loader-icon').hide();
+        
+        if(response.type == "error") {
+  
+          $('#send-message').show();
+  
+          $("#mail-status").attr("class","error");				
+  
+        } else if(response.type == "message"){ 
+          grecaptcha.reset();
+          $('#name').val('');
+          $('#email').val('');
+          $('#phone').val('');
+          $('#subject').val('');
+          $('#name').val('');
+          $('#comment-content').val('');
+  
+          $('#send-message').hide();
+  
+          $("#mail-status").attr("class","success");							
+  
+        }
+  
+        $("#mail-status").html(response.text);	
+  
+        },
+  
+        error: function(){} 
+  
+      });
+  
+    }));
+  
+  });
+</script>
