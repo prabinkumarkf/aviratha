@@ -116,46 +116,90 @@
     </div> 
     <div class="grid gap-4"> 
         
-       
+      <script type="text/javascript"
+      src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js">
+</script>
+<script type="text/javascript">
+ (function(){
+    emailjs.init("LmLtsRoKxX8n8oDp4");
+ })();
+
+ $("#prospects_form").submit(function(e) {
+    e.preventDefault();
+    sendMail()
+});
+
+ function sendMail() {
+  const params = {
+    user_name: document.getElementById("user_name").value,
+    user_email: document.getElementById("user_email").value,
+    user_phone: document.getElementById("user_phone").value, 
+    subject: document.getElementById("subject").value,   
+    message: document.getElementById("message").value,
+  };
+console.log(params);
+  const serviceID = "service_mfbp8ry";
+  const templateID = "template_cmn47l8";
+
+    emailjs.send(serviceID, templateID, params)
+    .then(res=>{
+        document.getElementById("user_name").value = "";
+        document.getElementById("user_email").value = "";
+        document.getElementById("user_phone").value = "";
+        document.getElementById("subject").value = "";
+        document.getElementById("message").value = "";
+        console.log(res);
+        alert("Your message sent successfully!!")
+
+    })
+    .catch(err=>console.log(err));
+
+}
+
+
+</script>
+
              
-          <form id="frmContact" action="" method="POST" novalidate="novalidate" class="space-y-6">
+          <form   method="post"  id="prospects_form"  class="space-y-6"> 
             <div class="grid grid-cols-1 gap-4 sm:grid-cols-2">
               <div>
                 <label class="sr-only" for="user_name">Name</label>
-                <input class="w-full border-b-2  border-0 p-3 text-sm" placeholder="Name" type="text" id="user_name">
+                <input required class="w-full border-b-2  border-0 p-3 text-sm" placeholder="Name" type="text" id="user_name">
               </div>
   
               <div>
                 <label class="sr-only" for="user_email">Email</label>
-                <input class="w-full border-b-2  border-0 p-3 text-sm" placeholder="Email" type="email" id="user_email">
+                <input required class="w-full border-b-2  border-0 p-3 text-sm" placeholder="Email" type="email" id="user_email">
               </div>
             </div>
             <div class="grid grid-cols-1 gap-4 sm:grid-cols-2"> 
             <div>
                 <label class="sr-only" for="subject">Subject</label>
-                <input class="w-full border-b-2  border-0 p-3 text-sm" placeholder="Subject" type="text" id="subject">
+                <input required class="w-full border-b-2  border-0 p-3 text-sm" placeholder="Subject" type="text" id="subject">
               </div>
   
               <div>
                 <label class="sr-only" for="user_phone">Phone</label>
-                <input class="w-full border-b-2  border-0 p-3 text-sm" placeholder="Phone" type="text" id="user_phone">
+                <input required class="w-full border-b-2  border-0 p-3 text-sm" placeholder="Phone" type="text" id="user_phone">
               </div>
             </div>
     <div>
               <label class="sr-only" for="content">Message</label>
   
-              <textarea class="w-full border-b-2  border-0  p-3 text-sm" placeholder="Hello Iam Intrested in.." rows="8" id="content"></textarea>
+              <textarea class="w-full border-b-2  border-0  p-3 text-sm" placeholder="Hello Iam Intrested in.." rows="8" id="message" required></textarea>
             </div>
   
             <div class="mt-4 items-center flex justify-end">
                
 
-                <button type="submit"  id="submitButton" class="w-max text-white  bg-[#45AEC4] hover:bg-black text-lg rounded-lg   px-5 py-2.5 text-center inline-flex items-center  ">Send Now
+             <!--    <button   class="w-max text-white  bg-[#45AEC4] hover:bg-black text-lg rounded-lg   px-5 py-2.5 text-center inline-flex items-center  ">Send Now
                     <svg class="rtl:rotate-180 w-3.5 h-3.5 ms-2" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 14 10">
                     <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M1 5h12m0 0L9 1m4 4L9 9"></path>
                     </svg>  
-          </button>
-               
+          </button> -->
+          
+          <input type="submit" title="Submit" class="w-max text-white  bg-[#45AEC4] hover:bg-black text-lg rounded-lg   px-5 py-2.5 text-center inline-flex items-center  ">
+
             </div>
           </form>
     </div>
