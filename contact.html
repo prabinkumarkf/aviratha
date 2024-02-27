@@ -14,9 +14,14 @@
   </script>
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
   <script src="https://ajax.aspnetcdn.com/ajax/jQuery/jquery-3.2.1.min.js"></script>
-  <script>(g=>{var h,a,k,p="The Google Maps JavaScript API",c="google",l="importLibrary",q="__ib__",m=document,b=window;b=b[c]||(b[c]={});var d=b.maps||(b.maps={}),r=new Set,e=new URLSearchParams,u=()=>h||(h=new Promise(async(f,n)=>{await (a=m.createElement("script"));e.set("libraries",[...r]+"");for(k in g)e.set(k.replace(/[A-Z]/g,t=>"_"+t[0].toLowerCase()),g[k]);e.set("callback",c+".maps."+q);a.src=`https://maps.${c}apis.com/maps/api/js?`+e;d[q]=f;a.onerror=()=>h=n(Error(p+" could not load."));a.nonce=m.querySelector("script[nonce]")?.nonce||"";m.head.append(a)}));d[l]?console.warn(p+" only loads once. Ignoring:",g):d[l]=(f,...n)=>r.add(f)&&u().then(()=>d[l](f,...n))})
-    ({key: "AIzaSyDhvBtDrKpWnnn3_S1LOApihRosQdrKypM", v: "weekly"});</script>
-     
+  <!--  <script>(g=>{var h,a,k,p="The Google Maps JavaScript API",c="google",l="importLibrary",q="__ib__",m=document,b=window;b=b[c]||(b[c]={});var d=b.maps||(b.maps={}),r=new Set,e=new URLSearchParams,u=()=>h||(h=new Promise(async(f,n)=>{await (a=m.createElement("script"));e.set("libraries",[...r]+"");for(k in g)e.set(k.replace(/[A-Z]/g,t=>"_"+t[0].toLowerCase()),g[k]);e.set("callback",c+".maps."+q);a.src=`https://maps.${c}apis.com/maps/api/js?`+e;d[q]=f;a.onerror=()=>h=n(Error(p+" could not load."));a.nonce=m.querySelector("script[nonce]")?.nonce||"";m.head.append(a)}));d[l]?console.warn(p+" only loads once. Ignoring:",g):d[l]=(f,...n)=>r.add(f)&&u().then(()=>d[l](f,...n))})
+    ({key: "AIzaSyDhvBtDrKpWnnn3_S1LOApihRosQdrKypM", v: "weekly"});</script>-->
+
+  <style>
+    .grecaptcha-badge {
+      visibility: hidden !important;
+    }
+  </style>
 </head>
 
 <body>
@@ -110,7 +115,7 @@
                         d="M35.8445 33.4604C35.0429 32.6528 33.1013 31.4741 32.1593 30.9991C30.9326 30.3812 30.8317 30.3308 29.8675 31.0471C29.2243 31.5251 28.7967 31.9521 28.0441 31.7916C27.2914 31.6311 25.6558 30.726 24.2236 29.2985C22.7914 27.8709 21.8338 26.188 21.6727 25.4379C21.5117 24.6878 21.9458 24.2653 22.4194 23.6206C23.0867 22.712 23.0362 22.5606 22.4658 21.334C22.021 20.3799 20.808 18.4567 19.9972 17.6591C19.1299 16.8025 19.1299 16.9539 18.5711 17.1861C18.1162 17.3775 17.6797 17.6102 17.2672 17.8812C16.4594 18.4178 16.0112 18.8635 15.6977 19.5334C15.3842 20.2032 15.2433 21.7736 16.8623 24.7145C18.4813 27.6554 19.6171 29.1592 21.968 31.5034C24.319 33.8476 26.1268 35.1081 28.7695 36.5901C32.0387 38.421 33.2927 38.0641 33.9646 37.7511C34.6365 37.4382 35.0843 36.9939 35.6219 36.1863C35.8936 35.7745 36.1268 35.3385 36.3186 34.8839C36.5513 34.3272 36.7027 34.3272 35.8445 33.4604Z"
                         stroke="#45AEC4" stroke-width="2" stroke-miterlimit="10" />
                     </svg> </td>
-                  <td class="whitespace-nowrap px-4 py-2  "> +1 (378) 400-1234
+                  <td class="whitespace-nowrap px-4 py-2  ">+91 9741224433
                   </td>
 
                 </tr>
@@ -143,7 +148,6 @@
           </div>
         </div>
         <div class="grid gap-4">
-
           <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js">
           </script>
 
@@ -170,8 +174,8 @@
 
               <div>
                 <label class="sr-only" for="user_phone">Phone</label>
-                <input required class="w-full border-b-2  border-0 p-3 text-sm" placeholder="Phone" minlength="10" maxlength="10" type="number"
-                  id="user_phone">
+                <input required class="w-full border-b-2  border-0 p-3 text-sm" placeholder="Phone" minlength="10"
+                  maxlength="10" type="number" id="user_phone">
               </div>
             </div>
             <div>
@@ -182,7 +186,7 @@
             </div>
             <div class="mt-4 items-center flex justify-end">
               <button id="submitButton"
-                class="w-max text-white bg-[#45AEC4] hover:bg-black text-lg rounded-lg px-5 py-2.5 text-center inline-flex items-center">
+                class="   w-max text-white bg-[#45AEC4] hover:bg-black text-lg rounded-lg px-5 py-2.5 text-center inline-flex items-center">
                 Send Now
                 <svg class="rtl:rotate-180 w-3.5 h-3.5 ms-2" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"
                   fill="none" viewBox="0 0 14 10">
@@ -191,12 +195,16 @@
                 </svg>
               </button>
             </div>
+
           </form>
-           
+
+
+
+
           <script>
 
             (function () {
-              emailjs.init("LmLtsRoKxX8n8oDp4");
+              emailjs.init("Lu57v2fYFk8-DJLyE");
             })();
 
 
@@ -237,20 +245,20 @@
   </section>
   <section class=" w-full  ">
     <div class="w-full  mx-auto  ">
-    <div class=" flex justify-center   ">
-     
+      <div class=" flex justify-center   ">
+
         <div class="relative w-full h-96">
           <iframe class="absolute top-0 left-0 w-full h-full"
-              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d497700.1123462223!2d77.30125997299136!3d12.953790190491011!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bae1670c9b44e6d%3A0xf8dfc3e8517e4fe0!2sBengaluru%2C%20Karnataka!5e0!3m2!1sen!2sin!4v1706339033752!5m2!1sen!2sin"
-              frameborder="0" style="border:0;" allowfullscreen="" aria-hidden="false" tabindex="0">
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d497700.1123462223!2d77.30125997299136!3d12.953790190491011!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bae1670c9b44e6d%3A0xf8dfc3e8517e4fe0!2sBengaluru%2C%20Karnataka!5e0!3m2!1sen!2sin!4v1706339033752!5m2!1sen!2sin"
+            frameborder="0" style="border:0;" allowfullscreen="" aria-hidden="false" tabindex="0">
           </iframe>
-      </div>
-    
-  
-     
+        </div>
 
 
-       
+
+
+
+
 
       </div>
     </div>
